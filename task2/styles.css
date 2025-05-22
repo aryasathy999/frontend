@@ -1,0 +1,142 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6e6e6;
+    margin: 0;
+    padding: 0;
+}
+
+.carrom-board{
+    width: 500px;
+    height: 500px;
+    background-color: #f4deb3;
+    border: 12px solid  #654321;
+    position: relative;
+    box-shadow: black;
+    border-radius: 10px;
+}
+
+.pocket{
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.top-left{
+    top: 0px;
+    left: 0px;
+}
+
+.top-right{
+    top: 0px;
+    right: 0px;
+}
+
+.bottom-left{
+    bottom: 0px;
+    left: 0px;
+}
+
+.bottom-right{
+    bottom: 0px;
+    right: 0px;
+}
+
+
+.coinplacer{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(151, 13, 13);
+    position: absolute;
+}
+
+.cptop-left{
+    top: 73px;
+    left: 76px;
+}
+
+.cptop-right{
+    top: 75px;
+    right: 60px;
+}
+
+.cpbottom-left{
+    bottom: 70px;
+    left: 80px;
+}
+
+.cpbottom-right{
+    bottom: 70px;
+    right: 60px;
+}
+
+.striker{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(241, 11, 11);
+    border-radius: 50%;
+    box-shadow: 3px solid #000;
+    position: absolute;
+    margin-top: 50%;                               /* or use top element */
+    margin-left: 50%;                              /* or use left element */
+    transform: translate(-50%, -50%);
+}
+
+.line {
+    position: absolute;
+    background-color: black;
+    transform-origin: top left;
+}
+
+.top-horizontal {
+    width: 330px;
+    height: 2px;
+    top: 75px;
+    left: 100px;
+}
+
+.bottom-horizontal {
+    width: 330px;
+    height: 2px;
+    bottom: 70px;
+    left: 100px;
+}
+
+.left-vertical {
+    width: 2px;
+    height: 320px;
+    top: 100px;
+    left: 80px;
+}
+
+.right-vertical {
+    width: 2px;
+    height: 320px;
+    top: 100px;
+    right: 60px;
+}
+
+.line.parallel {
+    background-color: black;
+}
+
+.top-horizontal.parallel {
+    top: 98px; 
+}
+
+.bottom-horizontal.parallel {
+    bottom: 98px; 
+}
+
+.left-vertical.parallel {
+    left: 100px; 
+}
+
+.right-vertical.parallel {
+    right: 82px; 
+}

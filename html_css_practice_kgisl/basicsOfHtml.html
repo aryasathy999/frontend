@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: aqua;
+    }
+    p{
+        text-align: center;
+    }
+    .media-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+</style>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit officia magnam, sapiente cumque natus quasi aut similique dolorem iusto nam vitae. Facere dolorum fuga, fugit consectetur earum debitis recusandae voluptatibus! <img src="images/images (4) (1).jpeg" alt="nature"></p>
+    <div class="media-container">    
+        <video height="400" width="500" controls autoplay loop muted>
+            <source src="media/VID-20221027-WA0002.mp4" type="video/mp4">
+        </video>
+        <audio controls muted>
+            <source src="media/music.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <!--dropdown-->
+    <label for="car">Choose a car: </label>
+    <select name="cars" id="car">
+        <option value="cars">Cars</option>
+        <option value="volvo">Volvo</option>
+        <option value="audi">Audi</option>
+        <option value="skoda">Skoda</option>
+        <option value="renault">Renault</option>
+    </select>
+
+    <!--checkbox-->
+    <h2>Select a Langauge</h2>
+
+    <input type="checkbox" id="check1" name="box">
+    <label for="check1">Java</label> <br>
+    <input type="checkbox" id="check2" name="box">
+    <label for="check2">C++</label> <br>
+    <input type="checkbox" id="check3" name="box">
+    <label for="check3">PHP</label> <br><br>
+
+    <input type="button" value="submit">
+
+    <h2>Choose your age</h2>
+
+    <input type="radio" id="age1" name="radiobox">
+    <label for="age1">0-20</label> <br>
+    <input type="radio" id="age2" name="radiobox">
+    <label for="age2">20-30</label> <br>
+    <input type="radio" id="age3" name="radiobox">
+    <label for="age3">30-40</label> <br><br>
+
+    <input type="button" value="submit">
+
+    <div>
+        <h2>Login</h2>
+        <form>
+            <div>
+                <label for="name">Username</label>
+                <input type="text" id="name"> 
+            </div>
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" id="pass">
+            </div>
+            <input type="checkbox" id="check1" name="box"> 
+            <label for="check1">Show Password</label> <br>
+            <input type="button" value="submit"> <br><br>
+        </form>
+    </div>
+
+    <h2>Our Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.854637511759!2d76.53194717481719!3d11.562276688638354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8a883ad22006b%3A0x95719e71c7f9c63!2sMudumalai%20Tiger%20Reserve!5e0!3m2!1sen!2sin!4v1745994404682!5m2!1sen!2sin"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>

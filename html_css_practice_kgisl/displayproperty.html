@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Properties</title>
+</head>
+<style>
+    .block{
+        display: block;
+        background: crimson;
+        padding: 15px;
+        margin: 5px;
+        color: white;
+    }
+    .inline{
+        display: inline;
+        background-color: hotpink;
+        padding: 10px 10px;
+    }
+    .inline-block{
+        display: inline-block;
+        background-color: lightpink;
+        height: 25px;
+        padding: 15px;
+    }
+    .none{
+        display: none;
+    }
+    .flex-container{
+        display: flex;
+        background-color: greenyellow;
+        gap: 15px;
+        padding: 15px;
+    }
+    .flex-item{
+        background: grey;
+        padding: 15px;
+        flex: 1;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* flex-grow: 1;
+        flex-shrink: 1%;
+        flex-basis: 1; */
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /*fr-fractions*/
+        background: lightsalmon;
+        padding: 18px;
+        text-align: center;
+        gap: 15px;
+        flex: 1;
+    }
+    .grid-item{
+        background: red;
+        color: wheat;
+    }
+    .table-container{
+        display: table;
+        border-collapse: separate;
+        width: 100%;
+    }
+    .table-row{
+        display: table-row;
+    }
+    .table-item{
+        display: table-cell;
+        border: 1px solid #000;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+<body>
+    <h2>Display: Block</h2>
+    <div class="block">Element 1</div>
+    <div class="block">Element 2</div>
+    <hr>
+    <h2>Display: Inline</h2>
+    <div class="inline">Box 1</div>
+    <div class="inline">Box 2</div>
+    <hr>
+    <h2>Display: Inline-Block</h2>
+    <div class="inline-block">Box 1</div>
+    <div class="inline-block">Box 2</div>
+    <hr>
+    <h2>Display: None</h2>
+    <div class="none">Box 1</div>
+    <hr>
+    <h2>Display: Flex</h2>
+    <div class="flex-container">
+        <div class="flex-item">Box 1</div>
+        <div class="flex-item">Box 2</div>
+        <div class="flex-item">Box 3</div>
+    </div>
+    <h2>Display: Grid</h2>
+    <div class="grid-container">
+        <div class="grid-item">Box 1</div>
+        <div class="grid-item">Box 2</div>
+        <div class="grid-item">Box 3</div>
+    </div>
+    <h2>Display: Table</h2>
+    <div class="table-container">
+        <div class="table-row">
+            <div class="table-item">Box 1</div>
+            <div class="table-item">Box 2</div>
+        </div>
+        <div class="table-row"></div>
+            <div class="table-item">Box 3</div>
+            <div class="table-item">Box 4</div>
+        </div>
+    </div>
+</body>
+</html>

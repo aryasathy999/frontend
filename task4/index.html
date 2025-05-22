@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+        }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: cornflowerblue;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            margin-bottom: 5px;
+        }
+        .nav-links{
+            list-style: none;
+            gap: 30px;
+            display: flex;
+        }
+        .nav-links a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        .section-content{
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+        }
+        .section{
+            padding: 16px 20px;
+        }
+        .section h2{
+            margin-bottom: 20px;
+        }
+        .section:nth-child(even){
+            background-color: magenta;
+        }
+        .section-content img{
+            max-width: 300px;
+            width: 100%;
+        }
+        footer{
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            background-color: cornflowerblue;
+            height: 25px;
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="mylogo">E-commerce Website</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <div class="section-content">
+            <div class="text">
+                <h2>Home</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sed! Mollitia odio explicabo magnam, amet voluptatum aperiam animi similique expedita iste, 
+                quas nobis commodi excepturi! Corrupti a molestias harum explicabo?</p>
+            </div>
+            <img src="images/picture1.jpg" alt="course">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-content">
+            <img src="images/picture2.jpg" alt="course">
+            <div class="text">
+                <h2>About</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sed! Mollitia odio explicabo magnam, amet voluptatum aperiam animi similique expedita iste, 
+                quas nobis commodi excepturi! Corrupti a molestias harum explicabo?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-content">
+            <div class="text">
+                <h2>Service</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sed! Mollitia odio explicabo magnam, amet voluptatum aperiam animi similique expedita iste, 
+                    quas nobis commodi excepturi! Corrupti a molestias harum explicabo?</p>
+                </div>
+            <img src="images/picture3.avif" alt="course">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-content">
+            <img src="images/picture4.jpg" alt="course">
+            <div class="text">
+                <h2>Contact</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sed! Mollitia odio explicabo magnam, amet voluptatum aperiam animi similique expedita iste, 
+                quas nobis commodi excepturi! Corrupti a molestias harum explicabo?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-content">
+            <div class="text">
+                <h2>Service</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sed! Mollitia odio explicabo magnam, amet voluptatum aperiam animi similique expedita iste, 
+                    quas nobis commodi excepturi! Corrupti a molestias harum explicabo?</p>
+                </div>
+            <img src="images/picture5.jpg" alt="course">
+        </div>
+    </section>    
+    <footer>
+        <div>&copy; coyright @2025 Register</div>
+    </footer>
+</body>
+</html>

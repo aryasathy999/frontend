@@ -1,0 +1,63 @@
+*{
+    background-color: #fff;
+}
+
+h1{
+    font-size: 50px;
+    color: aqua;
+}
+
+h2{
+    color: aqua;
+}
+
+h3{
+    color: aqua;
+}
+
+p{
+    font-size: larger;
+    line-height: 1.5;
+}
+
+.container{
+    display: flex;
+    gap: 25px;
+}
+
+.img1{
+    margin-top: 30px;
+    height: 500px;
+    width: 800px;
+}
+
+.img2{
+    margin-top: 25px;
+    height: 300px;
+    width: 300px;
+}
+
+.right-origin1{
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.right-origin2{
+    display: flex;
+    gap: 40px;
+}
+
+.btn1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    padding: 10px 50px 10px 50px;
+    background-color: rgb(220, 247, 247);
+    border: 1px solid  rgb(220, 247, 247);
+    border-radius: 2px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.para2{
+    text-decoration: underline;
+}

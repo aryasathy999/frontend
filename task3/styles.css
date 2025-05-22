@@ -1,0 +1,147 @@
+html,body {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(25, 25, 38);
+    color: aliceblue;
+  }
+  
+  .text-center {
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  .jumbotron h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .lead {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+  
+  .social-icons i {
+    font-size: 20px;
+    color: white;
+    border: 2px solid #f59e0b; 
+    border-radius: 50%;
+    padding: 12px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icons i:hover {
+    background-color: #f59e0b;
+    color: black;
+    transform: scale(1.05);
+  }
+  
+  
+  .container {
+    display: flex;
+    background-color: rgb(7, 7, 34);
+    padding: 60px 80px;
+    justify-content: space-between;
+  }
+  
+  .left-section {
+    width: 48%;
+    border-right: 1px solid gray;
+    padding-right: 40px;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .description {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  
+  .store-buttons {
+    margin-top: 30px;
+  }
+  
+  .button {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 10px 20px;
+    color: #8d600e;
+    border: 2px solid #8d600e;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .right-section {
+    width: 48%;
+    padding-left: 40px;
+  }
+  
+  .right-section h4 {
+    color: aliceblue;
+    margin-bottom: 20px;
+  }
+  
+  .subscribe {
+    display: flex;
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+  
+  .subscribe input {
+    flex: 1;
+    padding: 10px;
+    background-color: black;
+    border: 1px solid #8d600e;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .subscribe button {
+    background-color: #8d600e;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .column a {
+    text-decoration: none;
+    color: lightgray;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+  }
+  
+  .column a:hover {
+    color: white;
+  }
+  

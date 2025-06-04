@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Javascript Date and Time Example</h1>
+        <p id="p1"> </p>
+        <button type="submit" onclick="start();">start</button>
+        <button type="submit" onclick="stop();">stop</button>
+    </div>
+    
+    <script>
+        function checkClock(){
+            date=new Date();
+            hours=date.getHours();
+            minutes=date.getMinutes();
+            seconds=date.getSeconds();
+            fulltime=date.toLocaleTimeString();
+            para=document.getElementById('p1');
+            para.innerHTML=fulltime;
+            if(seconds % 2 == 0){
+                para.style.color="red";
+            }
+            else{
+                para.style.color="green";
+            }
+        }
+        
+        function start(){
+            clear=setInterval(checkClock);
+        }
+
+        function stop(){
+            clearInterval(clear);
+        }
+    </script>
+</body>
+</html>

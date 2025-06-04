@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para">full stack developer</p>
+    <button onclick="colorchange('blue')">blue</button>
+    <button onclick="colorchange('red')">red</button>
+    <script>
+        function colorchange(newcolor){
+            const elem=document.getElementsByClassName('para');
+            elem.style.backgroundColor=newcolor;
+        }
+    </script>
+</body>
+</html>

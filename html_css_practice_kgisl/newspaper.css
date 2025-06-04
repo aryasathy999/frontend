@@ -1,0 +1,76 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 40px;
+    color: #333;
+}
+
+header{
+    text-align: center;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.date{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+hr{
+    border: none;
+    border-top: 2px solid #000;
+    margin: 20px 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left-column, .middle-column, .right-column{
+    width: 30%;
+}
+
+.verticl-line{
+    width: 2px;
+    border: 2px solid #999;
+    height: auto;
+}
+
+.author{
+    font-style: italic;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-size: 18px;
+    font-style: italic;
+    border-left: 4px solid #999;
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+ul{
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+figure{
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img{
+    width: 70%;
+    max-width: 200%;
+}
+
+figcaption{
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>full stack developer</p>
+    <button id="mybutton">Click Me</button>
+    <script>
+        const button=document.getElementById('mybutton');
+        button.onclick=function(){
+            button.style.backgroundColor='red';
+        }
+        button.onmouseover=function(){
+            button.style.backgroundColor='blue';
+        }
+        button.onmouseout=function(){
+            button.style.backgroundColor='hotpink';
+        }
+    </script>
+</body>
+</html>

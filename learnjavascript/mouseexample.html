@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            padding: 50px;
+            margin-right: 1280px;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mouse Event Tracker</h2>
+    <div id="box">Hover or Click Me!</div>
+    <h1 id="log"></h1>
+    <script>
+        const box=document.getElementById("box");
+        const log=document.getElementById("log");
+        box.onmouseover=function(){
+            box.style.backgroundColor="lightyellow";
+            log.innerText="hover";
+        };
+
+        box.onmouseout=function(){
+            box.style.backgroundColor="hotpink";
+            log.innerText="Mouse Out!";
+        };
+
+        box.onmousedown=function(){
+            box.style.backgroundColor="lightgreen";
+            log.innerText="Mouse Down!";
+        };
+
+        box.onmouseup=function(){
+            box.style.backgroundColor="lightpink";
+            log.innerText="Mouse Up!";
+        };
+    </script>
+</body>
+</html>

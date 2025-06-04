@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <input id="name" type="text" placeholder="enter the name">
+    <input id="email" type="text" placeholder="enter the email">
+    <input id="address" type="text" placeholder="enter the address">
+    <input id="mobileno" type="text" placeholder="enter the mobileno">
+    <button type="submit" onclick="getinformation()">Submit</button>
+    
+    <li id="tocity"></li>
+
+    <script>
+        function getinformation(){
+            let username=document.getElementById('name').value;
+            let email=document.getElementById('email').value;
+            let address=document.getElementById('address').value;
+            let mobileno=document.getElementById('mobileno').value;
+
+            document.getElementById('tocity').innerHTML=
+            `Name: ${username}<br>
+             Email: ${email}<br>
+             Address: ${address}<br>
+             mobileno: ${mobileno}<br>`;
+        }
+    </script>
+</body>
+</html> 

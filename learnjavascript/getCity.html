@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="fromcity" type="text" placeholder="enter the cityname">
+    <button type="submit" onclick="getCityName()">Submit</button>
+    
+    <ul id="citylist"> 
+
+    </ul>
+
+    <script>
+        function getCityName(){
+            cityname=document.getElementById('fromcity').value;
+            if(cityname.trim() !== ""){
+                const li=document.createElement('li');
+                li.textContent=cityname;
+                document.getElementById('citylist').appendChild(li);
+                document.getElementById('fromcity').value="";
+            }
+        }
+    </script>
+</body>
+</html>

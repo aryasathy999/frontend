@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive navbar</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: cornflowerblue;
+            padding: 10px 20px;
+        }
+
+        .logo{
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            
+        }
+
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+            /* display: block; */
+            transition: background 0.3s;
+        }
+        nav ul li a:hover{
+            background-color:cadetblue;
+            border-radius: 6px;
+        }
+
+        /* hide menu toggle by default*/
+
+        .menu-toggle{
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+       .menu-toggle span{
+        background-color: red;
+        height: 3px;
+        margin: 4px 0;
+        width: 25px;
+       }
+
+       input[type="checkbox"]{
+            display: none;
+         }
+
+       @media (max-width: 768px){
+         .menu-toggle{
+            display: flex;
+         }
+         nav ul{
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            top: 60px;
+            right: 0;
+            background-color: #333;
+            width: 200px;
+            padding: 10px;
+         }
+
+         input[type="checkbox"]:checked ~ ul{
+            display: flex;
+         }
+
+         input[type="checkbox"]{
+            display: none;
+         }
+    }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">e-commerce</div>
+        <nav>
+            <!--hidden checkbox-->
+            <input type="checkbox" id="menu-toggle">
+
+            <!--Hamburger Icon-->
+
+            <label for="menu-toggle" class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </label>
+
+            <!--Nav links-->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+6
+</body>
+</html>

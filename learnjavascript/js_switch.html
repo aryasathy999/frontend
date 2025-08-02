@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const input=document.getElementById('dayInput');
+        const result=document.getElementById('result');
+
+        input.addEventListener("input", ()=>{
+            let value=input.value.trim();
+            if(value===""){
+                result.textContent="";
+                return;
+            }
+
+            let dayNumber=parseInt(value);
+            let dayName;
+            switch(dayNumber){
+                case 1:
+                    dayName="Monday";
+                    break;
+                case 2:
+                    dayName="Tuesday";
+                    break;
+                case 3:
+                    dayName="Wednesday";
+                    break;
+                case 4:
+                    dayName="Thursday";
+                    break;
+                case 5:
+                    dayName="Friday";
+                    break;
+                case 6:
+                    dayName="Saturday";
+                    break;
+                case 7:
+                    dayName="Sunday";
+                    break;
+                default:                    dayName="Invalid number:please enter 1 to 7";
+            }
+            result.textContent=dayName;
+        });
+    </script>
+</body>
+</html>

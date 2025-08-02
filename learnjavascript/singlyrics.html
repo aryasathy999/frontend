@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sing Lyrics</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      margin-top: 20%;
+    }
+
+    button{
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 12px 24px;
+      background-color: rgb(79, 79, 249);
+      border-radius: 8px;
+      border: none;
+      font-size: 20px;
+    }
+
+    button:hover{
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <button id="singBtn">Sing</button>
+
+  <script>
+    const lyrics = [
+      "Twinkle, twinkle, little star,",
+      "How I wonder what you are.",
+      "Up above the world so high,",
+      "Like a diamond in the sky."
+    ];
+
+    async function singLyrics(lines) {
+      for (let line of lines) {
+        const utter = new SpeechSynthesisUtterance(line);
+        utter.pitch = 1.8; // higher pitch to sound musical
+        utter.rate = 0.9;  // slower rate for clarity
+        speechSynthesis.speak(utter);
+
+        await new Promise(resolve => {
+          utter.onend = resolve; // wait for line to finish
+        });
+      }
+    }
+
+    document.getElementById('singBtn').addEventListener('click', () => {
+      speechSynthesis.cancel(); // stop any current speech
+      singLyrics(lyrics);
+    });
+  </script>
+</body>
+</html>

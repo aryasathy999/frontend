@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+
+        form{
+            width: 400px;
+            margin: auto;
+        }
+        input[type="submit"]{
+            margin-left: 120px;
+        }
+        input,select{
+            border: 1px solid blue;
+        }
+        input[type="radio"],
+        input[type="checkbox"]{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Novell Services Login</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>City of Employment:</td>
+                <td><input type="text" name="city"></td>
+            </tr>
+            <tr>
+                <td>Web server:</td>
+                <td>
+                    <select name="server">
+                        <option>--Choose a server--</option>
+                        <option>Server1</option>
+                        <option>Server2</option>
+                        <option>Server3</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <br>
+            
+            <tr>
+                <td>Please specify your role:</td>
+                <td>
+                    <input type="radio" name="role" value="admin">Admin<br>
+                    <input type="radio" name="role" value="emgineer">Engineer<br>
+                    <input type="radio" name="role" value="manager">Manager<br>
+                    <input type="radio" name="role" value="guest">Guest<br>
+                </td>
+            </tr>
+            
+            <br>
+            
+            <tr>
+                <td>Single Sign-on to the following:</td>
+                <td>
+                    <input type="checkbox" name="mail">Mail<br>
+                    <input type="checkbox" name="payroll">Payroll<br>
+                    <input type="checkbox" name="self-service">Self-service<br>
+                </td>
+            </tr>
+
+            <br>
+            <tr>
+                <td>
+                    <input type="submit" value="login">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

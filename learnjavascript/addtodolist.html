@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .wrapper{
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 300px;
+        text-align: center;
+      }
+
+      h2{
+        color: #333;
+      }
+
+      input[type="text"]{
+        width: 80%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+
+      button{
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover{
+        background-color: #218838;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Todo List</h2>
+        <input type="text" id="input">
+        <button id="add">Add</button>
+        <div id="todoList">
+
+        </div>
+    </div>
+    
+    <script>
+        const input=document.getElementById('input');
+        const button=document.getElementById('add');
+        const todoList=document.getElementById('todoList');
+
+        let todos=[];
+
+        window.onload = () => {
+            todos=JSON.parse(localStorage.getItem('todos')) || [];
+            todos.forEach(todo => addtodo(todo));
+        }
+
+        button.addEventListener('click', ()=>{
+            todos.push(input.value);
+            localStorage.setItem('todos', JSON.stringify(todos));
+            addtodo(input.value);
+            input.value="";
+        });
+
+        function addtodo(todo){
+            const para=document.createElement('p');
+            para.innerText=todo;
+            todoList.appendChild(para);
+
+            para.addEventListener("click", ()=>{
+                para.style.textDecoration="line-through";
+            });
+            
+            para.addEventListener("dblclick", ()=> {
+                todoList.removeChild(para);
+                remove(todo);
+            });
+        }
+
+        function remove(todo){
+            let index=todos.indexOf(todo);
+            if(index > -1){
+                todos.splice(index,1);
+            }
+            localStorage.setItem('todos',JSON.stringify(todos));
+        }
+
+    </script>
+</body>
+</html>

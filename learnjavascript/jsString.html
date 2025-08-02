@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String Example</h1>
+    <script>
+        function reverseString(str){
+            //[b,a,t,m,a,n].reverse().join("")
+            return str.split("").reverse().join("");
+        }
+        console.log(reverseString("batman"));
+
+        function palindrome(str){
+            let reversed = str.split("").reverse().join("");
+            return str == reversed;
+        }
+        console.log(palindrome("batman"));
+        console.log(palindrome("madam"));
+
+        function countVowels(str){
+            count=0;
+            vowels="aeiouAEIOU";
+            for(let char of str){
+                if(vowels.includes(char)){
+                    count++;
+                }
+            }
+            return count;
+        }
+        console.log(countVowels("javascript"));
+    </script>
+</body>
+</html>

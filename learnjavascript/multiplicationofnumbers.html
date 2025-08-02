@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter a Number</label>
+    <input type="text" id="inputField">
+    <button id="multiplyValues">Start</button>
+    <div id="output"> </div>
+    <script>
+    function multiplyValues(){
+        let num=Number(document.getElementById("inputField").value);
+        let outputDiv=document.getElementById("output");
+        outputDiv.innerHTML="";
+        let i=1;
+        if(isNaN(num)){
+            result='Enter a valid input';
+        }
+        else{
+            while(i<=10){
+                result=`${num} * ${i} = ${num * i}`;
+                outputDiv.innerHTML+=result+"<br>";
+                i++;
+            }
+        }
+    }
+    document.getElementById("multiplyValues").addEventListener('click',multiplyValues);
+    </script>
+</body>
+</html>

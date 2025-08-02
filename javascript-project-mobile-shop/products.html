@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav img {
+      height: 60px;
+      width: 60px;
+      margin-left: 90px;
+    }
+
+    .brand {
+      font-weight: bold;
+      color: #5f4bdb;
+      font-size: 1.5em;
+      margin-left: 10px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #212529;
+      font-size: 20px;
+    }
+
+    .nav-links a:hover {
+      background-color: #5f4bdb;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    #current-date {
+      text-align: center;
+      margin: 10px 0 30px;
+      font-weight: bold;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      width: 200px;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .btn {
+      margin: 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .buy-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .cart-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .remove-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    #cart {
+      margin-top: 30px;
+      padding: 10px;
+      border: 2px dashed #ccc;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #ccc;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div style="display: flex; align-items: center;">
+      <a href="home.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+        <img src="https://t4.ftcdn.net/jpg/01/82/91/85/360_F_182918530_3PJPCr1fSPXf3swlkrnI43yQz6F1dQFW.jpg" alt="Logo">
+        <span class="brand" style="color: #0d6Efd;">POORVIKA MOBILES</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="register.html" id="registerLink">Register</a>
+    </div>
+  </nav>
+
+  <!-- Date -->
+  <p id="current-date"></p>
+
+  <!-- Product List -->
+  <div class="product-container" id="product-list"></div>
+
+  <!-- Cart Section -->
+  <div id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total">Total (incl. 18% GST): ₹0</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Poorvika Mobiles. All rights reserved.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Display current date
+    const dateElem = document.getElementById('current-date');
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('en-IN', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    dateElem.textContent = `Today's Date: ${formattedDate}`;
+
+    const cart = [];
+
+    function isUserLoggedIn() {
+      return localStorage.getItem('isLoggedIn') === 'true';
+    }
+
+    function redirectToLogin() {
+      alert('Please login to proceed.');
+      localStorage.setItem('returnAfterLogin', 'products.html');
+      window.location.href = 'login.html';
+    }
+
+    function updateCart() {
+      const cartItems = document.getElementById('cart-items');
+      const totalElem = document.getElementById('total');
+      cartItems.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.title} - ₹${item.price} `;
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove';
+        removeBtn.className = 'btn remove-btn';
+        removeBtn.onclick = () => {
+          cart.splice(index, 1);
+          updateCart();
+        };
+        li.appendChild(removeBtn);
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+      const gst = total * 0.18;
+      const finalAmount = total + gst;
+      totalElem.textContent = `Total (incl. 18% GST): ₹${finalAmount.toFixed(2)}`;
+    }
+
+    function addToCart(product) {
+      if (!isUserLoggedIn()) {
+        redirectToLogin();
+        return;
+      }
+      cart.push(product);
+      updateCart();
+    }
+
+    function buyNow(product) {
+      if (!isUserLoggedIn()) {
+        redirectToLogin();
+        return;
+      }
+      cart.push(product);
+      updateCart();
+      alert(`Purchased ${product.title} for ₹${product.price}`);
+    }
+
+    fetch('https://dummyjson.com/products/category/smartphones')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('product-list');
+        data.products.forEach(product => {
+          const div = document.createElement('div');
+          div.className = 'product';
+          const img = document.createElement('img');
+          img.src = product.thumbnail;
+          img.alt = product.title;
+          const title = document.createElement('h3');
+          title.textContent = product.title;
+          const price = document.createElement('p');
+          price.textContent = `Price: ₹${product.price}`;
+          const buyBtn = document.createElement('button');
+          buyBtn.textContent = 'Buy Now';
+          buyBtn.className = 'btn buy-btn';
+          buyBtn.onclick = () => buyNow(product);
+          const cartBtn = document.createElement('button');
+          cartBtn.textContent = 'Add to Cart';
+          cartBtn.className = 'btn cart-btn';
+          cartBtn.onclick = () => addToCart(product);
+          div.appendChild(img);
+          div.appendChild(title);
+          div.appendChild(price);
+          div.appendChild(buyBtn);
+          div.appendChild(cartBtn);
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error('Error:', err);
+        document.getElementById('product-list').innerHTML = '<p>Failed to load products.</p>';
+      });
+
+    // Register/Logout Toggle
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const registerLink = document.getElementById('registerLink');
+    if (isLoggedIn && registerLink) {
+      registerLink.textContent = 'Logout';
+      registerLink.href = '#';
+      registerLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.setItem('isLoggedIn', 'false');
+        alert('You have been logged out.');
+        window.location.href = 'home.html';
+      });
+    }
+  </script>
+</body>
+</html>

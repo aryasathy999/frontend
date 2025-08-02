@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Push Values into an Array</h2>
+    <input type="text" id="inputValue" placeholder="Enter value">
+    <button onclick="pushValue()">Push</button>
+
+    <p><strong>Updated Array:</strong></p>
+    <p id="arrayDisplay">[]</p>
+    <script>
+        let myarray=[];
+        function pushValue(){
+            const input=document.getElementById('inputValue').value;
+            if(input.trim() !== ""){
+                myarray.push(input);
+                document.getElementById('arrayDisplay').textContent=JSON.stringify(myarray);
+                document.getElementById('inputValue').value="";
+            }
+            else{
+                alert("Please enter a value");
+            }
+        }
+    </script>
+</body>
+</html>

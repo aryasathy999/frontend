@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ten questions</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <script>
+        const arr=[1,2,3,4,5];
+        let output="";
+        for(let i=0;i<arr.length;i++){
+            output+=arr[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML=output; //printing each array elements
+
+        const arr1=[1,2,3,4,5];
+        let count;
+        for(count=0;arr1[count] !== undefined; count++){
+            
+        }
+        document.getElementById("demo1").innerHTML="The count of an array is " + count; //printing length of array without using method
+
+        const arr2=[1,2,3,4,5];
+        for(let i=0;i<arr2.length;i++){
+
+        }
+        document.getElementById("demo2").innerHTML=arr2[0] + " " + arr2[arr2.length-1];//printing first and last element of an array
+
+        const arr3=[1,2,3,4,5];
+        let sum=0;
+        for(let i=0;i<arr3.length;i++){
+        sum+=arr3[i];
+        }
+        document.getElementById("demo3").innerHTML="The sum of array elements is " + sum;//printing sum of all array elements
+
+        const arr4=[1,2,3,4,5];
+        let max=arr4[0];
+        for(let i=1;arr4[i] !== undefined;i++){
+            if(arr4[i] > max){
+                max=arr4[i];
+            }
+        }
+        document.getElementById("demo4").innerHTML="maximum element of an array is " + max;//printing maximum element of an array
+
+        const arr5=[1,2,3,4,5];
+        let min=arr5[0];
+        for(let i=1;arr5[i] !== undefined;i++){
+            if(arr5[i] < min){
+                min=arr5[i];
+            }
+        }
+        document.getElementById("demo5").innerHTML="minimum element of an array is " + min;//printing minimum element of an array
+
+        const arr6=[1,2,3,4,5];
+        let length=0;
+        let reverse="";
+        while(arr6.length !== undefined){
+            length++;
+        }
+        for(let i=length-1;i>=0;i--){
+            reverse+=arr6[i] + " ";
+        }
+        document.getElementById("demo6").innerHTML="The reverse of array elements is " + reverse;//printing reverse of an array elements
+
+        const arr7=[1,2,3,4,5];
+        const target=3;
+        let found=false;
+        for(let i=0;arr7[i] !== undefined;i++){
+            if(arr7[i] == target){
+                found=true;
+                break;
+            }
+        }
+        if(found){
+            document.getElementById("demo7").innerHTML=target + " element exists";
+        }
+        else{
+            document.getElementById("demo7").innerHTML=target + " element not exists";//printing if an element exists or not
+        }
+
+        const arr8=[1,2,3,4,5];
+        arr8.push(6);
+        arr8.pop();
+        document.getElementById("demo8").innerHTML=arr8.join(", ");//adding and removing last elements in array
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+.App {
+  display: flex;
+  gap: 20px;
+  text-align: center;
+}
+
+.App-logo {
+  height: 50vmin;
+  pointer-events: none;
+  margin-top: 10px;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #d7da18;
+  width: 50%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-header h2{
+  color: red;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-Header2{
+  background-color: green;
+  width: 50%;
+  height: 20%;
+  margin-top: 15%;
+  margin-right: 20px;
+}
+
+.App-Header2 h1{
+  background-color: #d7da18;
+}
+
+.App-Header2 h5{
+  background-color: red;
+}

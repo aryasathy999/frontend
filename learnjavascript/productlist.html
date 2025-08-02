@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2{
+            text-align: center;
+            color: #333;
+        }
+
+        #productslist, #displaycarts {
+            margin: 20px auto;
+            width: 60%;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10 rgba(0,0,0,0.1);
+        }
+
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li:last-child{
+            border-bottom: none;
+        }
+
+        button{
+            padding: 6px 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover{
+            background-color: #0056b3;
+        }
+
+        #displaycarts button{
+            background-color: #dc3545;
+        }
+
+        #displaycarts button:hover{
+            background-color: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product List</h2>
+    <ul id="productslist"> </ul>
+
+    <ul id="displaycarts"> </ul>
+    <script>
+        const products=[
+            {id:1, name:"shoe"},
+            {id:2, name:"gun"},
+            {id:3, name:"rafale"}
+        ]
+        function displayProducts(){
+            const list=document.getElementById('productslist');
+            const cartlist=document.getElementById("displaycarts");
+
+            products.forEach(product => {
+                const li=document.createElement('li');
+                li.textContent=product.name + " ";
+                const button=document.createElement('button');
+                button.textContent="Add To Cart";
+                button.onclick=()=>{
+                    const cartitem=document.createElement('li');
+                    cartitem.textContent=product.name;
+                    cartlist.appendChild(cartitem);           
+                    const removeButton=document.createElement('button');
+                    removeButton.textContent="Remove";
+                    removeButton.onclick=()=>{
+                        cartlist.removeChild(cartitem);
+                    }
+                    cartitem.appendChild(removeButton);
+                    cartlist.appendChild(cartitem);
+                }
+                li.appendChild(button)
+                list.appendChild(li);
+            })
+        }
+        displayProducts();
+    </script>
+</body>
+</html>

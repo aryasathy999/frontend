@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Synthesis Example</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+
+        button{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 12px 24px;
+            background-color: rgb(79, 79, 249);
+            border-radius: 8px;
+            border: none;
+            font-size: 20px;
+            margin: 5px;
+        }
+
+        button:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="playBtn">Play</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="stopBtn">Stop</button>
+
+    <script>
+        const text = `The SpeechSynthesis interface in JavaScript is part of the Web Speech API, enabling web applications to convert written text into synthesized speech, also known as Text-to-Speech (TTS). This functionality allows websites and applications to "speak" to users, enhancing accessibility and user interaction.`;
+        let utterance;
+        let isPaused = false;
+
+        document.getElementById('playBtn').addEventListener('click', () => {
+            if (!utterance || speechSynthesis.paused) {
+                if (speechSynthesis.paused) {
+                    speechSynthesis.resume();
+                } else {
+                    utterance = new SpeechSynthesisUtterance(text);
+                    speechSynthesis.speak(utterance);
+                    isPaused = false;
+                }
+            }
+        });
+
+        document.getElementById('pauseBtn').addEventListener('click', ()=>{
+            if(speechSynthesis.speaking && !speechSynthesis.paused){
+                speechSynthesis.pause();
+            }
+        });
+
+        document.getElementById('stopBtn').addEventListener('click', ()=>{
+            if(speechSynthesis.speaking){
+                speechSynthesis.cancel();
+                utterance = null; 
+            }
+        });
+    </script>
+</body>
+</html>

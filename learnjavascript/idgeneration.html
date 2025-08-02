@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="idgeneration">
+    <button id="generateid">Generate Id</button>
+
+    <script>
+        function generateid(){
+            const uniqueId=Date.now().toString(36);
+            const randomness=Math.random().toString(36).substr(2);
+            const fullId=uniqueId + randomness;
+            const generatedId=fullId.substr(0,10);
+            document.getElementById('idgeneration').value=generatedId;
+        }
+        document.getElementById('generateid').addEventListener('click',generateid);
+    </script>
+</body>
+</html>

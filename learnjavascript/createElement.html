@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputValue" placeholder="enter input">
+    <button onclick="addItem()">Add Item</button>
+    <ul id="itemList">
+
+    </ul>
+    <script>
+        function addItem(){
+            const input=document.getElementById('inputValue');
+            if(input.value.trim() !== ""){
+                const li=document.createElement("li");
+                li.innerText=input.value;
+                document.getElementById('itemList').appendChild(li);
+                document.getElementById('inputValue').value="";
+            }
+            else{
+                alert("enter value");
+            }
+        }
+    </script>
+</body>
+</html>
